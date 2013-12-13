@@ -635,9 +635,8 @@ def expand_code_getname(code):
 def expand_code_makeoverprint(names, minoverlay):
     out = ['\\begin{overprint}\n']
     for (index, name) in enumerate(names):
-        out.append('  \\onslide<%d>\\%s\n' % (index+minoverlay, name))
-    out.append('\\end{overprint}\n')
-
+        out.append('  \\only<%d>\\%s\n' % (index+minoverlay, name))
+    out.append('\\end{overprint} \n')
     return ''.join(out)
 
 def expand_code_get_unique_name(defverbs, code, lstparams):
